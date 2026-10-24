@@ -26,6 +26,89 @@ limit 2 offset 1;
 select * from customer
 where First_name="Rahul" or First_name="Sneha";
 
+-- This displays customers whose names start with the letter R.
+select * from customer
+where First_name like "R%";
+
+-- Retrieve customer records for CustomerID 104 and 105
+select * from customer
+where customer_id  in (104 ,105);
+
+-- Display customers whose last name starts with S
+select * from customer
+where Last_name regexp ("^S");
+
+-- Display Customers in Alphabetical Order
+select * from customer
+order by First_name ;
+
+-- Display customers sorted by LastName
+select * from customer
+order by Last_name asc;
+
+-- Find Customers Without Phone Numbers
+select * from customer
+where phone is null;
+
+-- Find Customers Having Email Addresses
+select * from customer
+where Email is not null;
+
+-- Find customers without email addresses
+select * from customer
+where Email is null;
+
+-- Search Customers Whose First Name Starts with “A”
+select * from customer
+where First_name regexp("^A");
+
+-- Search Customers Whose Email Contains “gmail”
+select * from customer
+where Email regexp ("gmail");
+
+-- Search Customers Whose Last Name Ends with “kar”
+select * from customer
+where Last_name regexp("$kar");
+
+-- Find customers whose email contains yahoo
+select * from customer
+where Email in ("yahoo");
+
+-- Display customers whose last name starts with P
+select * from customer
+where Last_name regexp("^P");
+
+-- Search customers whose phone number ends with 99
+select * from customer
+where phone regexp('99$');
+
+-- The customer relationship team wants to review records for a specific set of customers. 101,102,105
+select * from customer
+where Customer_id in (101,102,105);
+
+-- Display customer records for CustomerID 103 and 104
+select * from customer
+where Customer_id in (103,104);
+
+-- Display Customers in Ascending Order of Last Name
+select * from customer
+order by Last_name asc;
+
+ -- Display customers sorted by FirstName
+ select * from customer
+ order by First_name asc;
+ 
+ -- Display customers sorted by DateOfBirth
+ select * from customer
+ order by DateofBirth asc;
+ 
+  -- Retrieve only 4 customer records
+  select * from customer
+  limit 4;
+
+
+
+
 
 
 
